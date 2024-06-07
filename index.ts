@@ -1,16 +1,12 @@
 import { showReviewTotal, populateUser, showDetails, getTopTwoReviews} from './utils'
 import { Price, Country } from './types'
-import { Permissions , LoyaltyUser } from './enumbs'
-import  Review  from './interface'
+import { Permissions , LoyaltyUser } from './enums'
+import  Review  from './interfaces'
 const propertyContainer = document.querySelector('.properties')
 const reviewContainer = document.querySelector('.reviews')
 const container = document.querySelector('.container')
 const button = document.querySelector('button')
 const footer = document.querySelector('.footer')
-
-let isLoggedIn: boolean
-
-
 
 
 
@@ -99,6 +95,19 @@ const properties : Property[] = [
         },
         contact: [+34829374892553, 'andyluger@aol.com'],
         isAvailable: true
+    },
+    {
+        image: 'images/malaysian-hotel.jpeg',
+        title: 'Malia Hotel',
+        price: 35,
+        location: {
+            firstLine: 'Room 4',
+            city: 'Malia',
+            code: 45334,
+            country: 'Malaysia'
+        },
+        contact: [ +60349822083, 'lee34@gmail.com'],
+        isAvailable: false
     }
 ]
 
@@ -164,3 +173,4 @@ let yourMainProperty = new MainProperty(
 const mainImageContainer = document.querySelector('.main-image')
 const image = document.createElement('img')
 image.setAttribute('src', yourMainProperty.src)
+mainImageContainer.appendChild(image)
